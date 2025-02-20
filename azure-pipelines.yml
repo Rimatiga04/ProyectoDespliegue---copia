@@ -1,0 +1,15 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: UseNode@1
+  inputs:
+    version: '16.x'
+
+- script: |
+    npm install
+    npm test
+  displayName: 'Ejecutar pruebas con Jest'
